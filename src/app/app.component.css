@@ -1,0 +1,55 @@
+html, body{
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+span.active {
+  background-color: gray;
+}
+
+/* My DOC */
+
+.bd-sidebar nav a {
+  display: block;
+  padding: .25rem .75rem;
+  font-size: 12px;
+  color: #99979c;
+}
+
+nav hr {
+  margin: 0;
+}
+
+.nav-tabs .nav-link {
+  font-size: 87% !important;
+}
+
+/* end My DOC */
+
+/* prismjs */
+.tag {
+  font-size: 12px !important;
+  padding: 0px !important;
+}
+
+.h1-top a {
+  color: #1f2021;
+}
+
+pre {
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  padding-bottom: 0px !important;
+}
+/* end prismjs */
+
+/* grid */
+.row-grid {
+  border-top: 1px solid rgba(0,0,0,.125);
+  padding-top:0.5rem;
+  padding-bottom:0.5rem;
+}
+.header-grid {
+  cursor: pointer;
+}
+/* end grid */
