@@ -1,6 +1,6 @@
 {
-  "name": "@lunargorge/ng2-handy-oauth",
-  "version": "1.0.3",
+  "name": "ng2-handy-oauth",
+  "version": "1.0.4",
   "description": "The Angular 2 component supports OAuth 2 implicit grant flow.",
   "keywords": [
     "angular2",

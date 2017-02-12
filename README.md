@@ -4,7 +4,7 @@ The Angular 2 component supports OAuth 2 implicit grant flow.
 
 [Live demo](http://oauth.diamondtower.pl)
 
-![Angular 2 OAuth](/src/assets/img/ng2-handy-oauth.png)
+![Angular 2 OAuth](http://oauth.diamondtower.pl/assets/img/ng2-handy-oauth.png)
 
 ### Installation
 
@@ -77,9 +77,27 @@ Spotify
 * In next step enter Website and Redirect URIs
 * Prepare other components - Full example
 
+### vHost config
+
+If you use PathLocationStrategy strategy you should configure vhost, example (nginx):
+
+```bash
+server {
+      listen   80;
+      server_name <ADDRESS>;
+
+      root /var/www/<PATH>;
+      index index.html index.htm;
+      try_files $uri /$uri index.html;
+}
+```
+
+
 ### Prepare other components - [Full example](http://oauth.diamondtower.pl/demo/sign-in)
 
 * Sign in - init implicit grant flow
 * Callback - receive access_token
 * Info - display user data
 * Error - handling errors
+
+ ng2-handy-oauth is responsible for the "implicit grant flow", the view and the name of the components depend on you.

@@ -10,7 +10,7 @@ import {
     selector: 'handy-error',
     template: `
         <div class="container-fluid">
-            <span *ngIf="errCode">This error code: {{errCode}}</span>
+            This error code: {{errProvider}} / {{errCode}}
         </div>
     `
 })
