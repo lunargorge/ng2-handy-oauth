@@ -1,15 +1,9 @@
 import {
-  HandyOauthMessageInterface as OauthMessageInterface
-} from './../library/shared/interfaces/handy-oauth-message.interface';
-import {
-  HandyOauthMessageService as OauthMessageService
-} from './../library/shared/services/handy-oauth-message.service';
-import {
+  HandyOauthMessageInterface as OauthMessageInterface,
+  HandyOauthMessageService as OauthMessageService,
+  HandyOauthProcessProgressEnum as OauthProcessProgressEnum,
   HandyOauthProvidersController as OauthProvidersController
 } from './../library';
-import {
-  HandyOauthProcessProgressEnum as OauthProcessProgressEnum
-} from './../library/shared/enum/handy-oauth-process-progress.enum.ts';
 
 /*
  * Angular 2 decorators and services

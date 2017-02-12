@@ -76,4 +76,4 @@ dll/
 *.d.ts
 *.metadata.json
 src/**/*.js
-src/custom-typings.d.ts
+!*.custom-typings.d.ts
