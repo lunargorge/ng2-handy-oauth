@@ -27,7 +27,8 @@ const ngcWebpack = require('ngc-webpack');
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
+  title: 'Angular2 Oauth',
+  description: 'The Angular 2 component supports implicit grant flow.',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
