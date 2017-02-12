@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 
 // tslint:disable
-let example: string = `
+let appModuleExample: string = `
 import { NgModule } from 'angular2/core';
 import { Ng2HandyOauthModule } from 'ng2-handy-oauth';
 
@@ -30,6 +30,17 @@ import { Ng2HandyOauthModule } from 'ng2-handy-oauth';
 export class AppModule {}
 `;
 
+let nginxConfigExample: string = `
+  server {
+        listen   80;
+        server_name <ADDRESS>;
+
+        root /var/www/<PATH>;
+        index index.html index.htm;
+        try_files $uri /$uri index.html;
+  }
+`;
+
 @Component({
   selector: 'my-home',
   providers: [],
@@ -44,18 +55,18 @@ export class AppModule {}
 
       Your application should always use HTTPS in this scenario.
 
-      <p class="mt-3"><b>Installation</b></p>
+      <h3 class="mt-3"><b>Installation</b></h3>
       <handy-syntax-highlighter [language]="'bash'"
                             [content]="'npm install ng2-handy-oauth --save'"
       ></handy-syntax-highlighter>
 
-      <p class="mt-4"><b>Configuration</b></p>
+      <h3 class="mt-4"><b>Configuration</b></h3>
       In your app add Ng2HandyOauthModule:
       <handy-syntax-highlighter [language]="'typescript'"
-                            [content]="example"
+                            [content]="appModuleExample"
       ></handy-syntax-highlighter>
 
-      <p class="mt-4"><b>Obtaining OAuth 2 Keys</b></p>
+      <h3 class="mt-4"><b>Obtaining OAuth 2 Keys</b></h3>
       
       <ol>
           <li>
@@ -110,7 +121,13 @@ export class AppModule {}
           </li>
       </ol>  
 
-      <p class="mt-4"><b>Prepare other components - <a [routerLink]=" ['./demo/sign-in'] ">Full example</a></b></p>
+        <h3 class="mt-4"><b>vHost config</b></h3>
+        If you use <i>PathLocationStrategy</i> strategy you should configure vhost, example <small>(nginx)</small>:
+        <handy-syntax-highlighter [language]="'nginx'"
+                              [content]="nginxConfigExample"
+        ></handy-syntax-highlighter>
+
+      <h3 class="mt-4"><b>Prepare other components - <a [routerLink]=" ['./demo/sign-in'] ">Full example</a></b></h3>
       <ul>
         <li>Sign in - init implicit grant flow</li>
         <li>Callback - receive access_token</li>
@@ -122,7 +139,8 @@ export class AppModule {}
   `
 })
 export class HomeComponent implements OnInit {
-  public example: string = example;
+  public appModuleExample: string = appModuleExample;
+  public nginxConfigExample: string = nginxConfigExample;
 
   constructor() {}
 

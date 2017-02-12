@@ -6,7 +6,7 @@ import { FoursquareUserinfoResponseInterface } from './../interface/foursquare-u
 
 @Injectable()
 export class FoursquareHttpService {
-    public static handleError(error: Response) {
+    public static handleError(error: Response): Observable<any> {
         return Observable.throw(error.json().error || 'Server error');
     }
 

@@ -1,5 +1,6 @@
+import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { Subject, BehaviorSubject, Subscription } from 'rxjs';
 
 @Injectable()
 export class HandyOauthMessageService<T> {
@@ -9,7 +10,7 @@ export class HandyOauthMessageService<T> {
         this.subject.next(data);
     }
 
-    public subscribe(cb: Function, cbErr?: Function) {
+    public subscribe(cb: Function, cbErr?: Function): Subscription {
         return this.subject.subscribe(
             (res: T) => {
                 if (!res) {

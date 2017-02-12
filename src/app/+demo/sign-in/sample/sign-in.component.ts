@@ -48,12 +48,19 @@ export class SignInComponent implements OnInit {
     }
 
     public ngOnInit() {
+        this.top();
         this.block();
         this.getNamesProviders();
     }
 
     public login(nameProvider: string): void {
         this.oauthProvidersController.login(nameProvider);
+    }
+
+    protected top(): void {
+        setTimeout(() => {
+            window.scrollTo(0,0);
+        }, 200);
     }
 
     protected getNamesProviders(): void {

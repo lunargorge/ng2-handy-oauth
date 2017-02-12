@@ -10,7 +10,7 @@ import {
 
 @Injectable()
 export class GoogleHttpService {
-    public static handleError(error: Response) {
+    public static handleError(error: Response): Observable<any> {
         return Observable.throw(error.json().error || 'Server error');
     }
 

@@ -46,23 +46,24 @@ import {
     HandyOauthStorageInterface as StorageInterface,
     HandyOauthMessageInterface as MessageInterface,
     HandyOauthUrls as Urls,
-    HandyOauthConfig
+    HandyOauthConfig,
+    HandyOauthUrlsInterface,
+    HandyOauthStorageInterface
 } from './shared';
 
-export function configProvidersServiceFactory(config: ConfigInterface) {
+export function configProvidersServiceFactory(config: ConfigInterface): ConfigProvidersService {
   return  new ConfigProvidersService(config);
-  // return  new ConfigProvidersService();
 }
 
-export function storageServiceFactory(config: ConfigInterface) {
+export function storageServiceFactory(config: ConfigInterface): HandyOauthStorageInterface {
     return  (!config.hasOwnProperty('storage')) ? new StorageService() : config.storage;
 }
 
-export function urlsFactory(config: ConfigInterface) {
+export function urlsFactory(config: ConfigInterface): HandyOauthUrlsInterface {
     return  (!config.hasOwnProperty('urls')) ? new Urls() : config.urls;
 }
 
-export function messageServiceFactory() {
+export function messageServiceFactory(): MessageService<MessageInterface> {
     return  new MessageService<MessageInterface>();
 }
 

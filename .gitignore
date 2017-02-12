@@ -72,3 +72,8 @@ dll/
 *.ngsummary.json
 *.shim.ngstyle.ts
 *.css.ngstyle.ts
+*.js.map
+*.d.ts
+*.metadata.json
+src/**/*.js
+src/custom-typings.d.ts

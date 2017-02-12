@@ -6,7 +6,7 @@ import { FacebookUserinfoResponseInterface } from './../interface/facebook-useri
 
 @Injectable()
 export class FacebookHttpService {
-    public static handleError(error: Response) {
+    public static handleError(error: Response): Observable<any> {
         return Observable.throw(error.json().error || 'Server error');
     }
 

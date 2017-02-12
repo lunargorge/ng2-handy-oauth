@@ -6,7 +6,7 @@ import { SpotifyUserinfoResponseInterface } from './../interface/facebook-userin
 
 @Injectable()
 export class SpotifyHttpService {
-    public static handleError(error: Response) {
+    public static handleError(error: Response): Observable<any> {
         return Observable.throw(error.json().error || 'Server error');
     }
 
@@ -17,7 +17,7 @@ export class SpotifyHttpService {
     public userinfo(url: string, accessToken: string): Observable<SpotifyUserinfoResponseInterface> {
         let headers = new Headers();
         headers.append('Authorization', 'Bearer ' + accessToken);
-        console.log(accessToken);
+        // console.log(accessToken);
         return this.http.get(url, { headers })
             .map((res) => res.json()).catch(SpotifyHttpService.handleError);
     }
