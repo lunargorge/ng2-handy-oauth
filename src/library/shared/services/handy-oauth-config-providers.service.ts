@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 
 import {
+    HandyOauthConfigInterface,
     HandyOauthConfigProviderInterface as ConfigProviderInterface
-} from './../interfaces/handy-oauth-config-provider.interface';
-import { HandyOauthConfigInterface } from './../interfaces/handy-oauth-config.interface';
+} from './../interfaces';
 
 @Injectable()
 export class HandyOauthConfigProvidersService {
-    // constructor() {
-    //     //
-    // }
+
     constructor(private config: HandyOauthConfigInterface) {
-        // this.configProviders = config.providers;
+
     }
 
     public getNamesProviders(): string[] {
@@ -27,6 +25,7 @@ export class HandyOauthConfigProvidersService {
             return this.config.providers[ name ];
         }
 
-        throw Error('Provider "' + name + '" don\'t exists');
+        return null;
+        // throw Error('Provider "' + name + '" don\'t exists');
     }
 }

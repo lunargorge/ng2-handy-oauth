@@ -38,8 +38,10 @@ export class FacebookProviderModel extends HandyOauthProvider implements HandyOa
         super();
 
         let config: HandyOauthConfigProviderInterface = this.configServ.getConfigProvider(HandyOauthProviders.FACEBOOK);
-        this.auth.setConfig(config);
-        this.providerName = HandyOauthProviders.FACEBOOK;
+        if (config) {
+            this.auth.setConfig(config);
+            this.providerName = HandyOauthProviders.FACEBOOK;
+        }
     }
 
     public logout(data: HandyOauthUserDataInterface): void {

@@ -34,8 +34,10 @@ export class SpotifyProviderModel extends HandyOauthProvider implements HandyOau
         super();
 
         let config: HandyOauthConfigProviderInterface = this.configServ.getConfigProvider(HandyOauthProviders.SPOTIFY);
-        this.auth.setConfig(config);
-        this.providerName = HandyOauthProviders.SPOTIFY;
+        if (config) {
+            this.auth.setConfig(config);
+            this.providerName = HandyOauthProviders.SPOTIFY;
+        }
     }
 
     public logout(data: HandyOauthUserDataInterface): void {

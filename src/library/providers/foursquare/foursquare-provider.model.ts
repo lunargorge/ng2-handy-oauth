@@ -34,8 +34,10 @@ export class FoursquareProviderModel extends HandyOauthProvider implements Handy
 
         let config: HandyOauthConfigProviderInterface
             = this.configServ.getConfigProvider(HandyOauthProviders.FOURSQUARE);
-        this.auth.setConfig(config);
-        this.providerName = HandyOauthProviders.FOURSQUARE;
+        if (config) {
+            this.auth.setConfig(config);
+            this.providerName = HandyOauthProviders.FOURSQUARE;
+        }
     }
 
     public logout(data: HandyOauthUserDataInterface): void {

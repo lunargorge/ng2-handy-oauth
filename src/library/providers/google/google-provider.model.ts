@@ -45,8 +45,10 @@ export class GoogleProviderModel extends HandyOauthProvider implements HandyOaut
         super();
 
         let config: HandyOauthConfigProviderInterface =  this.configServ.getConfigProvider(HandyOauthProviders.GOOGLE);
-        this.auth.setConfig(config);
-        this.providerName = HandyOauthProviders.GOOGLE;
+        if (config) {
+            this.auth.setConfig(config);
+            this.providerName = HandyOauthProviders.GOOGLE;
+        }
     }
 
     public logout(data: HandyOauthUserDataInterface): void {
