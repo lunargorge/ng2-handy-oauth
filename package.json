@@ -1,5 +1,5 @@
 {
-  "name": "ng2-handy-oauth",
+  "name": "@lunargorge/ng2-handy-oauth",
   "version": "1.0.0",
   "description": "The Angular 2 component supports OAuth 2 implicit grant flow.",
   "keywords": [
@@ -12,6 +12,8 @@
   "homepage": "http://oauth.diamondtower.pl",
   "license": "MIT",
   "scripts": {
+    "pub:aot": "ngc -p tsconfig-npm.json && npm publish",
+    "pub": "tsc -p tsconfig-npm.json && npm publish",
     "build:aot:prod": "npm run clean:dist && npm run clean:aot && webpack --config config/webpack.prod.js  --progress --profile --bail",
     "build:aot": "npm run build:aot:prod",
     "build:dev": "npm run clean:dist && webpack --config config/webpack.dev.js --progress --profile",
@@ -154,10 +156,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/angularclass/angular2-webpack-starter.git"
+    "url": "https://github.com/lunargorge/ng2-handy-oauth.git"
   },
   "bugs": {
-    "url": "https://github.com/angularclass/angular2-webpack-starter/issues"
+    "url": "https://github.com/lunargorge/ng2-handy-oauth/issues"
   },
   "engines": {
     "node": ">= 4.2.1",

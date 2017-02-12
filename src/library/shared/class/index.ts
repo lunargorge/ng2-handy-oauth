@@ -1,3 +1,4 @@
+export * from './handy-oauth-config.class';
 export * from './handy-oauth-error-keys.class';
 export * from './handy-oauth-providers.class';
 export * from './handy-oauth-storage-keys.class';

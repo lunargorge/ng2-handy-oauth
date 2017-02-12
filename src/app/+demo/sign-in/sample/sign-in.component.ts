@@ -34,7 +34,7 @@ import {
 
     <sign-in-doc></sign-in-doc>
     `,
-    styleUrls: ['./sign-in.component.scss']
+    styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
     public providers: string[];

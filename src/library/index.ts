@@ -45,17 +45,26 @@ import {
     HandyOauthStorageService as StorageService,
     HandyOauthStorageInterface as StorageInterface,
     HandyOauthMessageInterface as MessageInterface,
-    HandyOauthUrls as Urls
+    HandyOauthUrls as Urls,
+    HandyOauthConfig
 } from './shared';
 
-// let provideProvidersFactory = (
-//     config: ConfigProvidersService,
-//     storage: StorageService,
-//     message: MessageService<MessageInterface>,
-//     http: Http
-// ) => {
-//     return new ProvidersFactory(config, storage, message, http);
-// };
+export function configProvidersServiceFactory(config: ConfigInterface) {
+  return  new ConfigProvidersService(config);
+  // return  new ConfigProvidersService();
+}
+
+export function storageServiceFactory(config: ConfigInterface) {
+    return  (!config.hasOwnProperty('storage')) ? new StorageService() : config.storage;
+}
+
+export function urlsFactory(config: ConfigInterface) {
+    return  (!config.hasOwnProperty('urls')) ? new Urls() : config.urls;
+}
+
+export function messageServiceFactory() {
+    return  new MessageService<MessageInterface>();
+}
 
 export * from './providers';
 export * from './shared';
@@ -66,8 +75,8 @@ export * from './shared';
       JsonpModule,
       RouterModule,
   ],
-  declarations: [ ],
-  exports: [ ],
+  // declarations: [ ],
+  // exports: [ ],
 })
 
 export class Ng2HandyOauthModule {
@@ -77,6 +86,10 @@ public static forRoot(
         return {
             ngModule: Ng2HandyOauthModule,
             providers: [
+                {
+                    provide: HandyOauthConfig,
+                    useValue: config
+                },
                 // google
                 GoogleHttpService,
                 GoogleAuthModel,
@@ -102,27 +115,25 @@ public static forRoot(
                 SpotifyProviderModel,
                 {
                     provide: ConfigProvidersService,
-                    useValue: new ConfigProvidersService(config.providers)
+                    useFactory: configProvidersServiceFactory,
+                    deps: [HandyOauthConfig]
                 },
                 {
                     provide: StorageService,
-                    useValue: (!config.hasOwnProperty('storage')) ? new StorageService() : config.storage
+                    useFactory: storageServiceFactory,
+                    deps: [HandyOauthConfig]
                 },
                 {
                     provide: Urls,
-                    useValue: (!config.hasOwnProperty('urls')) ? new Urls() : config.urls
+                    useFactory: urlsFactory,
+                    deps: [HandyOauthConfig]
                 },
                 {
                     provide: MessageService,
-                    useValue: new MessageService<MessageInterface>()
+                    useFactory: messageServiceFactory
                 },
                 ProvidersContainer,
                 ProvidersController
-                // {
-                //     provide: ProvidersFactory,
-                //     useFactory: provideProvidersFactory,
-                //     deps: [ConfigProvidersService, StorageService, MessageService, Http]
-                // },
             ]
         };
   };
