@@ -63,15 +63,15 @@ export class SignInComponent implements OnInit {
         }, 200);
     }
 
-    protected getNamesProviders(): void {
-        this.providers = this.oauthConfigServ.getNamesProviders();
-    }
-
     protected block(): void {
         // for the logged-in user you can block this view ...
         // let data: HandyOauthUserDataInterface = this.storageServ.get(HandyOauthStorageKeys.DATA);
         // if (data) {
             // redirect somewhere ...
         // }
+    }
+
+    protected getNamesProviders(): void {
+        this.providers = this.oauthConfigServ.getNamesProviders();
     }
 }

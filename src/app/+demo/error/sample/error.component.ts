@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import {
     HandyOauthErrorKeys as ErrorKeys
-} from './../../../../library/shared/class/handy-oauth-error-keys.class';
+} from './../../../../library'; // ... from 'ng2-handy-oauth'
 
 @Component({
     selector: 'handy-error',

@@ -127,14 +127,16 @@ let nginxConfigExample: string = `
                               [content]="nginxConfigExample"
         ></handy-syntax-highlighter>
 
-      <h3 class="mt-4"><b>Prepare other components - <a [routerLink]=" ['./demo/sign-in'] ">Full example</a></b></h3>
+      <h3 class="mt-4"><b>Create other components - <a [routerLink]=" ['./demo/sign-in'] ">Full example</a></b></h3>
       <ul>
         <li>Sign in - init implicit grant flow</li>
         <li>Callback - receive access_token</li>
         <li>Info - display user data</li>
         <li>Error - handling errors</li>
       </ul>
-
+      <p>
+        ng2-handy-oauth is responsible for the "implicit grant flow", the view and the name of the components depend on you.
+      </p>
     </div>
   `
 })

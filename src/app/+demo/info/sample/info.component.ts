@@ -25,6 +25,7 @@ import {
             </div>
             <div class="row text-left mt-3">
                 <div class="col-12">
+                    <p><b>User data</b>:</p>
                     <pre *ngIf="data">{{data | json}}</pre>
                 </div>
             </div>
