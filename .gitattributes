@@ -1,1 +1,5 @@
 yarn.lock -diff
+*.ts linguist-language=TypeScript
+*.js linguist-language=JavaScript
+*.css linguist-language=Css
+src/assets linguist-documentation=false
