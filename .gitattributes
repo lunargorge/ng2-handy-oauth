@@ -2,4 +2,6 @@ yarn.lock -diff
 *.ts linguist-language=TypeScript
 *.js linguist-language=JavaScript
 *.css linguist-language=Css
+src/assets/font-awesome linguist-vendored
+src/assets/css linguist-vendored
 src/assets linguist-documentation=false
