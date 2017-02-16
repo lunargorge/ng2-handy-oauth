@@ -1,4 +1,5 @@
 yarn.lock -diff
 src/assets/font-awesome/* linguist-vendored
 src/assets/css/* linguist-vendored
+config/* linguist-vendored
 src/assets linguist-documentation=false
