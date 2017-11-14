@@ -1,6 +1,6 @@
 {
   "name": "ng2-handy-oauth",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "The Angular (> 2) component supports OAuth 2 implicit grant flow.",
   "keywords": [
     "angular2",
@@ -162,10 +162,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AngularClass/angular-starter.git"
+    "url": "https://github.com/lunargorge/ng2-handy-oauth.git"
   },
   "bugs": {
-    "url": "https://github.com/AngularClass/angular-starter/issues"
+    "url": "https://github.com/lunargorge/ng2-handy-oauth/issues"
   },
   "engines": {
     "node": ">= 4.2.1",
